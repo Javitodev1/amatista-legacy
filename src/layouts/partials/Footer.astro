@@ -1,0 +1,139 @@
+---
+import Typographi from "@/components/foundations/Typographi.astro"
+import Logo from "@/icons/Logo.astro"
+
+const socials = [
+  {
+    text: "Instagram",
+    href: "https://www.instagram.com/amatista.comunidad/",
+  },
+  {
+    text: "Whatsapp",
+    href: "https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0",
+  },
+  {
+    text: "TikTok",
+    href: "https://www.tiktok.com/@amatista.comunidad",
+  },
+  {
+    text: "Facebook",
+    href: "https://www.facebook.com/amatista.comunidad/",
+  },
+]
+
+const legals = [
+  {
+    text: "Política de Privacidad",
+    href: "/legales#politicas-de-privacidad",
+  },
+  {
+    text: "Política de Devoluciones y Reembolso",
+    href: "/legales#politicas-de-reembolso",
+  },
+  {
+    text: "Terminos y Condiciones",
+    href: "/legales#terminos-y-condiciones",
+  },
+]
+
+const sitemap = [
+  {
+    text: "Inicio",
+    href: "/",
+  },
+  {
+    text: "Tienda",
+    href: "/tienda",
+  },
+  {
+    text: "Nosotras",
+    href: "/nosotras",
+  },
+  {
+    text: "Comunidad",
+    href: "/comunidad",
+  },
+  {
+    text: "Contacto",
+    href: "/contacto",
+  },
+  {
+    text: "Kit Sanación",
+    href: "/kit-sanacion",
+  },
+  {
+    text: "Nuestros empaques",
+    href: "/empaques",
+  },
+  {
+    text: "Puntos de entrega",
+    href: "/envios",
+  },
+  {
+    text: "Como comprar",
+    href: "/como-comprar",
+  },
+]
+---
+
+<footer class="p-4 bg-raw_white sm:p-6 dark:bg-black">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="md:flex md:justify-between">
+      <div class="mb-6 md:mb-0 md:w-full">
+        <div class="w-40">
+          <Logo variant="v" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+        <div>
+          <Typographi as="h2" variant="FOOTER_TITLE" color="RESPONSIVE" class="mb-4">
+            Te guiamos
+          </Typographi>
+          <ul class="text-gray-600 dark:text-gray-400 [&>li]:mb-4">
+            {sitemap.map(({ text, href }) => (
+              <Typographi as="li" variant="FOOTER_BODY" color="RESPONSIVE">
+                <a href={href} class="hover:underline">
+                  {text}
+                </a>
+              </Typographi>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <Typographi as="h2" variant="FOOTER_TITLE" color="RESPONSIVE" class="mb-4">
+            Te invito a seguirnos
+          </Typographi>
+          <ul class="text-gray-600 dark:text-gray-400 [&>li]:mb-4">
+            {socials.map(({ text, href }) => (
+              <Typographi as="li" variant="FOOTER_BODY" color="RESPONSIVE">
+                <a href={href} target="_blank" class="hover:underline">
+                  {text}
+                </a>
+              </Typographi>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <Typographi as="h2" variant="FOOTER_TITLE" color="RESPONSIVE" class="mb-4">
+            Cumplimos las normas
+          </Typographi>
+          <ul class="text-gray-600 dark:text-gray-400 [&>li]:mb-4">
+            {legals.map(({ text, href }) => (
+              <Typographi as="li" variant="FOOTER_BODY" color="RESPONSIVE">
+                <a href={href} class="hover:underline">
+                  {text}
+                </a>
+              </Typographi>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm text-gray-500 dark:text-gray-400 text-nowrap"
+        >&copy; 2024 <a href="https://javito.dev" target="_blank" class="hover:underline">Amatista Comunidad&trade;, desarrollado por <strong>Javier Fuentes</strong></a>
+      </span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,50 @@
+---
+import Typographi from '@/components/foundations/Typographi.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import kitHealingImg from '@public/optimized/home_kitsanacion.webp'
+import BuyButton from '@/components/BuyButton.astro'
+
+const images = {
+  right: kitHealingImg.src,
+}
+---
+
+<SectionContainer variant='darker'>
+  <div class='grid grid-cols-1 md:grid-cols-3'>
+    <div class='flex flex-col items-center order-2 col-span-2 p-4 bg-amatista md:p-10 md:order-1 md:items-start'>
+      <TextContainer class='flex flex-col gap-2 mb-12' responsive='RESPONSIVE'>
+        <Typographi as='h2' variant='TITLE' color='WHITE'
+          >Kit de sanación
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='WHITE'
+          >Descubrí el poder de la sanación a través de nuestro kit intencionado
+          para activar la energía de tus prendas y conectar con ellas a un nivel
+          más profundo, potenciando tu estilo y energía personal.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='WHITE'
+          >Con la ayuda de una amatista, gran transmutadora de energías y un
+          incienso para crear outfits poderosamente mágicos que te acompañen en
+          un viaje expansivo y sanador.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='WHITE'
+          >Nuestro compromiso es asegurarnos que recibas tus prendas con la
+          energía y el propósito adecuado, luego de nuestra atenta preselección
+          de cada una de ellas.
+        </Typographi>
+
+        <Typographi as='h3' variant='BODY_TITLE' color='WHITE'
+          >Transforma tu experiencia de vestir con nuestro kit
+        </Typographi>
+      </TextContainer>
+      <BuyButton href='/kit-sanacion' variant="BLACK" position="RESPONSIVE">Como activar mi kit</BuyButton>
+    </div>
+    <div class='md:h-full h-[350px] order-1 md:order-2'>
+      <div
+        style=`background-image: url(${images.right});`
+        class='w-full h-full bg-center bg-no-repeat bg-cover'
+      >
+      </div>
+    </div>
+  </div>
+</SectionContainer>

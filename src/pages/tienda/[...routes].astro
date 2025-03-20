@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import Typographi from '@/components/foundations/Typographi.astro';
+// import App from '../../svelte/App.svelte';
+
+export function getStaticPaths() {
+  return [
+    { params: { routes: 'producto' } },
+    { params: { routes: undefined } },
+  ]
+}
+---
+
+<Layout title="Welcome to Astro.">
+  <SectionContainer>
+    <Typographi as='h2' variant='TITLE' color="BLACK">tienda no disponible</Typographi>
+    <Typographi as='p' variant='BODY' color="BLACK">La web ya no esta en uso por lo que la tienda fue removida</Typographi>
+  </SectionContainer>
+</Layout>

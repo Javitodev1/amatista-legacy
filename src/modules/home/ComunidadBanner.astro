@@ -1,0 +1,54 @@
+---
+import Typographi from '@/components/foundations/Typographi.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import BuyButton from '@/components/BuyButton.astro'
+import SpreadImages from '@/components/molecules/SpreadImages.astro'
+
+import centerImage from '@public/optimized/home_comunidad_5.webp'
+import topLeftImage from '@public/optimized/home_comunidad_4.webp'
+import topRightImage from '@public/optimized/home_comunidad_2.webp'
+import bottomLeftImage from '@public/optimized/home_comunidad_1.webp'
+import bottomRightImage from '@public/optimized/home_comunidad_3.webp'
+
+const images = {
+  topLeftSrc: topLeftImage.src,
+  topRightSrc: topRightImage.src,
+  centerSrc: centerImage.src,
+  bottomLeftSrc: bottomLeftImage.src,
+  bottomRightSrc: bottomRightImage.src,
+}
+---
+
+<SectionContainer>
+  <div class='grid grid-cols-1 md:grid-cols-3 place-items-center'>
+    <TextContainer responsive='RESPONSIVE'>
+      <Typographi
+        as='h3'
+        variant='SUBTITLE'
+        color='BLACK'
+        darkColor='WHITE'
+        class='tracking-wider'
+        >COMUNIDAD
+      </Typographi>
+      <Typographi as='h3' variant='TITLE' color='ACCENT_AMATISTA' class='mb-6'
+        >Construyendo <br class='hidden md:block' /> Juntas
+      </Typographi>
+      <Typographi
+        as='h3'
+        variant='BODY'
+        color='BLACK'
+        darkColor='WHITE'
+        class='tracking-wide mb-12'
+        >Nos unimos para crear una comunidad donde creamos juntas un mundo,
+        tanto en su forma tangible como energética.
+      </Typographi>
+
+      <BuyButton href='/comunidad' variant='RESPONSIVE' position='RESPONSIVE'
+        >Conoce más
+      </BuyButton>
+    </TextContainer>
+
+    <SpreadImages {...images} loading='lazy' class='md:col-span-2 order-first md:order-last'/>
+  </div>
+</SectionContainer>

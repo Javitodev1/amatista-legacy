@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<div class='overflow-x-auto lg:overflow-x-visible' class:list={className}>
+  <div class='grid grid-cols-3 gap-x-2 min-w-[800px]'>
+    <slot></slot>
+  </div>
+</div>

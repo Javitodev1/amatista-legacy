@@ -1,0 +1,35 @@
+---
+import ContactButton from '@/components/ContactButton.astro'
+import ImageTransition from '@/components/ImageTransition.astro'
+import heroImg1 from '@public/optimized/home_hero_1.webp'
+import heroImg2 from '@public/optimized/home_hero_2.webp'
+import heroImg3 from '@public/optimized/home_hero_3.webp'
+
+const items = [
+  {
+    imageUrl: heroImg1.src,
+    text: 'Con conciencia y propósito elegí ser <strong>sostenible</strong>',
+  },
+  {
+    imageUrl: heroImg2.src,
+    text: 'Tu compra tu <strong>contribución</strong> con nuestra madre tierra',
+  },
+  {
+    imageUrl: heroImg3.src,
+    text: 'Vestimos cuerpos sagrados con prendas <strong>únicas</strong>',
+  },
+]
+---
+
+<section class='relative z-0 bg-black'>
+  <ImageTransition items={items} />
+  <div class='absolute left-0 w-full bottom-1/4'>
+    <ContactButton
+      variant='WHITE'
+      href='/tienda'
+      target='_self'
+      position='CENTER'
+      >compra ahora
+    </ContactButton>
+  </div>
+</section>

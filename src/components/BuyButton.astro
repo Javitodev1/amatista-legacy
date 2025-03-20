@@ -1,0 +1,48 @@
+---
+import Typographi from './foundations/Typographi.astro'
+
+enum VariantClasses {
+  RESPONSIVE = 'dark:bg-raw_white dark:text-black bg-black text-white',
+  BLACK = 'bg-black text-white',
+  WHITE = 'bg-raw_white text-black',
+  NONE = '',
+}
+
+enum PositionClasses {
+  LEFT = 'flex justify-start',
+  CENTER = 'flex justify-center',
+  RIGHT = 'flex justify-end',
+  RESPONSIVE = 'flex md:justify-start justify-center',
+  NONE = '',
+}
+
+interface Props {
+  variant?: keyof typeof VariantClasses
+  href?: string
+  class?: string
+  position?: keyof typeof PositionClasses
+}
+
+const {
+  href = '/tienda#',
+  variant = VariantClasses.NONE,
+  class: className,
+  position = PositionClasses.NONE,
+} = Astro.props
+
+const selectedVariant = VariantClasses[variant as keyof typeof VariantClasses]
+const selectedPosition =
+  PositionClasses[position as keyof typeof PositionClasses]
+---
+
+<div class:list={[className, selectedPosition]}>
+  <a
+    href={href}
+    class='px-12 py-2 text-center duration-200 hover:text-amatista'
+    class:list={selectedVariant}
+  >
+    <Typographi as='p' variant='BODY' class='font-bold'
+      ><slot></slot>
+    </Typographi>
+  </a>
+</div>

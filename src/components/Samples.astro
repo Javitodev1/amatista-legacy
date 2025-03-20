@@ -1,0 +1,37 @@
+---
+import TextContainer from './TextContainer.astro'
+import Product from './Product.astro'
+import BuyButton from './BuyButton.astro'
+interface ProductProps {
+  title: string
+  price: number
+  imageUrl: string
+  isSoldout: boolean
+}
+interface SectionGalleryTexts {
+  title: string
+  callToAction: string
+}
+interface Props {
+  texts: SectionGalleryTexts
+  products: ProductProps[]
+}
+const { texts, products } = Astro.props
+---
+
+<div>
+  <TextContainer>
+    <h2>
+      {texts.title}
+    </h2>
+  </TextContainer>
+  <div
+    class="container grid grid-cols-2 mb-6 md:grid-cols-3 lg:grid-cols-4 gap-y-6 md:gap-y-4 gap-x-2"
+  >
+    {products.map((product) => <Product {...product} />)}
+  </div>
+
+  <div class="flex justify-center">
+    <BuyButton>{texts.callToAction}</BuyButton>
+  </div>
+</div>

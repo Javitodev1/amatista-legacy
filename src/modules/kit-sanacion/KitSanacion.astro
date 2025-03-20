@@ -1,0 +1,197 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import ContactButton from '@/components/ContactButton.astro'
+
+import amatistasImg from '@public/optimized/kit-sanacion-amatistas.webp'
+import starterKitImage1 from '@public/optimized/kit_sanacion_1.webp'
+import starterKitImage2 from '@public/optimized/kit_sanacion_2.webp'
+import starterKitImage3 from '@public/optimized/kit_sanacion_3.webp'
+import starterKitImage4 from '@public/optimized/kit_sanacion_4.webp'
+import starterKitImage5 from '@public/optimized/kit_sanacion_5.webp'
+
+const stepsStarterKit = [
+  {
+    title: 'Encuentra tu Espacio Tranquilo',
+    body: 'Busca un lugar que te transmita paz y tranquilidad. Puede ser tu rincón favorito en casa o un espacio al aire libre donde te sientas cómoda, inspirada y relajada.',
+    imageSrc: starterKitImage1.src,
+    imageAlt: '',
+  },
+  {
+    title: 'Conéctate con la Energía Renovadora',
+    body: 'Tómate un momento para respirar profundamente y visualiza una luz blanca que te rodea, infundiéndote con energía fresca y positiva.',
+    imageSrc: starterKitImage3.src,
+    imageAlt: '',
+  },
+  {
+    title: 'Crea una Atmósfera Serena con Velas e Incienso',
+    body: 'Enciende la vela y el incienso para establecer una atmósfera serena. Mientras lo haces, establece una intención clara de transmutar tus prendas, permitiendo que te acompañen en nuevas experiencias y aventuras.',
+    imageSrc: starterKitImage5.src,
+    imageAlt: '',
+  },
+  {
+    title: 'Purifica tus Prendas con Amatista',
+    body: 'Pasa tu amatista por todas tus prendas, visualizando cómo su energía alquimiza y purifica cada una de ellas. Siéntete libre de tocarlas y sostenerlas mientras te conectas con su nueva vibración.',
+    imageSrc: starterKitImage4.src,
+    imageAlt: '',
+  },
+  {
+    title: 'Finaliza con Gratitud y Paz Interior',
+    body: 'Agradece a las energías universales, a tus prendas y a ti mismo por este proceso de sanación y renovación. Tómate un momento para respirar profundamente y sentirte en paz antes de continuar con tu día.',
+    imageSrc: starterKitImage2.src,
+    imageAlt: '',
+  },
+]
+
+const usosAmatista = [
+  {
+    title: 'Meditación',
+    content:
+      'Coloca una amatista en tu espacio de meditación o sostén una en tus manos mientras meditas para aumentar la claridad mental y la conexión espiritual.',
+    positionCss: 'md:row-start-1 md:col-start-1 md:col-span-3 md:row-span-4',
+  },
+  {
+    title: 'Protección',
+    content:
+      'Lleva una amatista contigo o colócala en tu hogar para protegerte de energías negativas y promover un ambiente de paz y armonía.',
+    positionCss: 'md:row-start-1 md:col-start-9 md:col-span-3 md:row-span-4',
+  },
+  {
+    title: 'Mejora del sueño',
+    content:
+      'Coloca una amatista bajo tu almohada o en tu mesita de noche para promover un sueño reparador y combatir el insomnio.',
+    positionCss: 'md:row-start-4 md:col-start-1 md:col-span-3 md:row-span-4',
+  },
+  {
+    title: 'Concentración',
+    content:
+      'Mantén una amatista cerca de tu espacio de trabajo o estudio para mejorar la concentración y la capacidad de enfoque.',
+    positionCss: 'md:row-start-4 md:col-start-9 md:col-span-3 md:row-span-4',
+  },
+  {
+    title: 'Alivio del estrés',
+    content:
+      'Sostén una amatista en momentos de estrés o ansiedad para ayudar a calmar la mente y encontrar la serenidad interior.',
+    positionCss: 'md:row-start-7 md:col-start-3 md:col-span-3 md:row-span-3',
+  },
+  {
+    title: 'cuida tu amatista',
+    content:
+      'Recuerda limpiar y recargar tu amatista regularmente, ya sea con agua y sal marina, luz solar o luna llena, para mantener sus propiedades energéticas.',
+    positionCss: 'md:row-start-7 md:col-start-7 md:col-span-3 md:row-span-3',
+  },
+]
+---
+
+<Layout>
+  <SectionContainer>
+    <TextContainer responsive='RESPONSIVE' class='mb-12'>
+      <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+        >como activar mi kit
+      </Typographi>
+      <Typographi as='p' variant='SUBTITLE' color='RESPONSIVE'
+        >Para usar nuestro Kit de Sanación y Activación de prendas, sigue estos
+        sencillos pasos:
+      </Typographi>
+    </TextContainer>
+
+    <ul class='flex flex-col gap-12 mb-12'>
+      {stepsStarterKit.map(({ title, body, imageSrc, imageAlt }, index) => {
+        return (
+          <li class='flex-col gap-12 md:gap-0 md:flex-row md:border-4 md:border-amatista flex max-w-[840px] relative md:odd:flex-row-reverse even:ml-auto group items-center md:shadow-black/20 md:shadow-md'>
+            <TextContainer
+              class='md:px-12 md:group-odd:pr-24 md:group-even:pl-24'
+              responsive='RESPONSIVE'
+            >
+              <Typographi
+                as='h2'
+                variant='BODY_TITLE'
+                color='ACCENT_AMATISTA'
+                class='mb-4'
+              >
+                {title}
+              </Typographi>
+              <Typographi
+                as='p'
+                variant='BODY'
+                color='RESPONSIVE'
+              >
+                {body}
+              </Typographi>
+            </TextContainer>
+
+            <div class='w-full h-auto md:w-[300px] md:h-[300px] aspect-square'>
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                width='300'
+                height='300'
+                class='object-cover object-center w-full h-auto aspect-square'
+              />
+            </div>
+
+            <span class='hidden md:block bg-amatista w-[100px] aspect-square rounded-full absolute top-1/2 -translate-y-1/2 group-odd:translate-x-1/2 group-even:-translate-x-1/2 shadow-black/20 shadow-md'>
+              <p class='text-white text-5xl flex h-full items-center justify-center font-bold font-lora'>
+                {index + 1}
+              </p>
+            </span>
+          </li>
+        )
+      })}
+    </ul>
+
+    <ContactButton variant='DARK_MODE' position='CENTER'
+      >contactame
+    </ContactButton>
+  </SectionContainer>
+
+  <!-- Usos de la amatista -->
+  <SectionContainer>
+    <div
+      class='grid grid-cols-1 md:grid-rows-9 md:grid-cols-11 md:gap-x-12 md:gap-y-12 gap-8'
+    >
+      <TextContainer
+        responsive='BOTH_CENTER'
+        class='md:row-start-1 md:col-start-4 md:col-span-5 md:row-span-1'
+      >
+        <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+          >usos de la AMATISTA
+        </Typographi>
+      </TextContainer>
+      {usosAmatista.map(({ title, content, positionCss }) => (
+        <TextContainer
+          responsive='RESPONSIVE'
+          class:list={positionCss}
+        >
+          <Typographi
+            as='h3'
+            variant='BODY_TITLE'
+            color='ACCENT_AMATISTA'
+            class='mb-4'
+          >
+            {title}
+          </Typographi>
+          <Typographi
+            as='p'
+            variant='BODY'
+            color='RESPONSIVE'
+          >
+            {content}
+          </Typographi>
+        </TextContainer>
+      ))}
+
+      <div
+        class='md:row-start-2 md:col-start-4 md:col-span-5 md:row-span-5 w-full h-auto aspect-square'
+      >
+        <div
+          style=`background-image: url(${amatistasImg.src});`
+          class='w-full h-full aspect-square bg-center bg-cover'
+        >
+        </div>
+      </div>
+    </div>
+  </SectionContainer>
+</Layout>

@@ -1,0 +1,68 @@
+---
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import ZoomInBanner from '@/components/ZoomInBanner.astro'
+import testImage from '@public/images/products/1_1.webp'
+const images = {
+  topLeft: testImage.src,
+  bottomLeft: testImage.src,
+  right: testImage.src,
+}
+
+interface Texts {
+  title: string
+  ctaTopLeft: string
+  ctaBottomLeft: string
+  ctaRight: string
+}
+
+interface Props {
+  texts: Texts
+}
+
+const { texts } = Astro.props
+---
+
+<SectionContainer variant="darker">
+  <TextContainer>
+    <h2>{texts.title}</h2>
+  </TextContainer>
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 h-[800px] md:h-[1000px]"
+  >
+    <ZoomInBanner
+      imageUrl={images.topLeft}
+      href="/tienda/todo"
+      class="order-1"
+    >
+      <h3
+        class="group-hover:underline group-hover:text-amatista dark:text-white"
+      >
+        {texts.ctaTopLeft}
+      </h3>
+    </ZoomInBanner>
+
+    <ZoomInBanner
+      imageUrl={images.right}
+      href="/tienda/todo"
+      class="order-last col-span-2 row-span-2 md:order-2"
+    >
+      <h3
+        class="group-hover:underline group-hover:text-amatista dark:text-white"
+      >
+        {texts.ctaRight}
+      </h3>
+    </ZoomInBanner>
+
+    <ZoomInBanner
+      imageUrl={images.bottomLeft}
+      href="/tienda/todo"
+      class="order-3"
+      ><h3
+        class="group-hover:underline group-hover:text-amatista dark:text-white"
+      >
+        {texts.ctaBottomLeft}
+      </h3>
+    </ZoomInBanner>
+  </div>
+</SectionContainer>

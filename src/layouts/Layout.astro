@@ -1,0 +1,41 @@
+---
+import "@fontsource-variable/lora"
+import "@fontsource-variable/urbanist"
+// import "@fontsource/roboto"
+import { ViewTransitions } from "astro:transitions"
+import Header from "./partials/Header.astro"
+import Footer from "./partials/Footer.astro"
+
+interface Props {
+  h1?: string
+  title?: string
+  description?: string
+}
+
+const {
+  h1 = "Amatista Comunidad Tienda Segunda Mano",
+  title = "Amatista Comunidad - Tienda Segunda Mano",
+  description = "En amatista comunidad alargamos el ciclo de prendas únicas y sustentables como blusas, camisas, pantalones, vestidos, abrigos, poleras y accesorios. Enviamos a Maldonado, Montevideo, Canelones, Rocha y todo Uruguay.",
+} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es" class="font-urbanist">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <h1 class="hidden">{h1}</h1>
+    <Header />
+    <main>
+      <slot></slot>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,7 @@
+export { default as H1 } from './1.astro'
+export { default as H2 } from './2.astro'
+export { default as H3 } from './3.astro'
+export { default as H4 } from './4.astro'
+export { default as H5 } from './5.astro'
+export { default as H6 } from './6.astro'
+export { default as H7 } from './7.astro'

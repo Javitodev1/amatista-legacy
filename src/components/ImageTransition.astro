@@ -1,0 +1,76 @@
+---
+import {Variants, TextColors} from '@/constants/typographi'
+import TextContainer from './TextContainer.astro'
+
+interface ImageItem {
+  imageUrl: string
+  text: string
+}
+
+interface Props {
+  class?: string
+  items?: ImageItem[]
+}
+
+const { class: className, items = [] } = Astro.props
+---
+
+<div
+  class="relative z-0 w-full h-screen overflow-hidden"
+  class:list={[className]}
+>
+  <div class="animation absolute left-0 top-0 w-full">
+    {items.map(({ imageUrl, text }) => (
+      <div class="relative z-0">
+        <div class="overflow-hidden h-screen">
+          <div
+            style={`background-image: url(${imageUrl});`}
+            class="zoom-in-anim h-full w-full bg-cover bg-center bg-no-repeat"
+          />
+        </div>
+        <span class="absolute left-0 top-0 h-full w-full bg-black/50" />
+        <TextContainer responsive="BOTH_CENTER" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h2
+            class="text-center [&_strong]:text-amatista mb-20"
+            class:list={[Variants.BANNER, TextColors.WHITE]}
+            set:html={text}
+          />
+        </TextContainer>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .animation {
+    animation: slide-up 15s steps(3) infinite, fade-in-out 5s linear infinite;
+  }
+
+  .zoom-in-anim {
+    animation: zoom-in 5s linear infinite;
+  }
+
+  @keyframes slide-up {
+    to {
+      top: -300vh;
+    }
+  }
+  @keyframes fade-in-out {
+    from {
+      opacity: 0%;
+    }
+    15%,
+    85% {
+      opacity: 100%;
+    }
+
+    to {
+      opacity: 0%;
+    }
+  }
+  @keyframes zoom-in {
+    to {
+      scale: 115%;
+    }
+  }
+</style>

@@ -1,0 +1,46 @@
+---
+import Typographi from '@/components/foundations/Typographi.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+---
+
+<SectionContainer>
+  <TextContainer
+    responsive='BOTH_CENTER'
+    class='flex flex-col items-center justify-center gap-6'
+  >
+    <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+      >novedades
+    </Typographi>
+    <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+      >¡Unité a la Comunidad <strong class='text-amatista'>AMATISTA</strong>! <br class="block md:hidden" />
+      Entérate de las últimas novedades. <br /> Recibirás
+      un <strong class='text-amatista'>10% DE DESCUENTO</strong> <br class="block md:hidden"> para tu primera
+      compra.
+    </Typographi>
+
+    <form action='emailto:contacto@amatistacomunidad.com' class='relative'>
+      <label for='email-form'>
+        <input
+          id='email-form'
+          name='email'
+          type='email'
+          placeholder='Email'
+          class='w-full max-w-[250px] md:w-[400px] peer placeholder:pl-2'
+        />
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 512 512'
+          class='absolute w-4 h-4 -translate-y-1/2 opacity-40 top-1/2 right-4 peer-focus:opacity-80'
+        >
+          <path
+            d='M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z'
+          ></path>
+        </svg>
+      </label>
+    </form>
+    <Typographi as='h3' variant='SUBTITLE' color='BLACK' darkColor='WHITE'
+      >SUSCRÍBETE
+    </Typographi>
+  </TextContainer>
+</SectionContainer>

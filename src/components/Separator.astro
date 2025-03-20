@@ -1,0 +1,47 @@
+---
+import * as Highlights from "@/icons/highlight"
+interface Props {
+  directionX?: "normal" | "reverse"
+  directionY?: "normal" | "reverse"
+  variant?: "H1" | "H2" | "H3" | "H4" | "H5" | "H6" | "H7"
+}
+
+const {
+  directionX = "normal",
+  directionY = "normal",
+  variant = "H1",
+} = Astro.props
+
+const IconComponent = Highlights[variant]
+---
+
+<section class="relative h-32 w-full">
+  <div
+    class="h-full w-full bg-primary dark:bg-dark-primary"
+    class:list={[{ "rotate-180": directionY === "reverse" }]}
+  >
+    <div
+      class="h-full w-full bg-secondary dark:bg-dark-secondary"
+      class:list={[
+        {
+          "cut-1": directionX === "normal",
+          "cut-2": directionX === "reverse",
+        },
+      ]}
+    >
+    </div>
+  </div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 h-full">
+    <IconComponent class="h-full aspect-square text-amatista" />
+  </div>
+</section>
+
+<style>
+  .cut-1 {
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
+
+  .cut-2 {
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+</style>

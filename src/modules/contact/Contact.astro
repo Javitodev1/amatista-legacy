@@ -1,0 +1,104 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import Card from '@/components/molecules/Card.astro'
+import CardGallery from '@/components/organisms/CardGallery.astro'
+import Whatsapp from '@/components/Whatsapp.astro'
+
+import banner_left_img from '@public/optimized/vende_tu_ropa_3.webp'
+import banner_center_img from '@public/optimized/vende_tu_ropa_2.webp'
+import banner_right_img from '@public/optimized/vende_tu_ropa_1.webp'
+
+const banner = [
+  {
+    title: 'Limpía tu clóset',
+    content:
+      'Seleccioná lo que ya no uses. Recordá que en Amatista, tomamos prendas en perfecto estado, recién lavadas, como nuevas.',
+    image: banner_left_img.src,
+  },
+  {
+    title: 'Entrega tus prendas',
+    content: 'Comunicate con nosotros para la entrega de las prendas.',
+    image: banner_center_img.src,
+  },
+  {
+    title: 'Cobra tus ventas',
+    content: 'Ganarás un porcentaje de tus ventas',
+    image: banner_right_img.src,
+  },
+]
+---
+
+<Layout>
+  <SectionContainer variant='darker'>
+    <Typographi
+      as='h2'
+      variant='RESPONSIVE_TITLE'
+      color='ACCENT_AMATISTA'
+      class='mb-12'
+      >VALORAMOS CADA PRENDA POR SU HISTORIA
+    </Typographi>
+
+    <CardGallery>
+      {banner.map((props) => <Card {...props} />)}
+    </CardGallery>
+  </SectionContainer>
+
+  <SectionContainer id='contacto'>
+    <TextContainer responsive='BOTH_CENTER'>
+      <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA' class='mb-12'
+        >Contacto
+      </Typographi>
+
+      <div class='flex justify-center'>
+        <form
+          action='mailto:contacto@amatistacomunidad.com'
+          method='post'
+          class='grid w-full max-w-xl grid-cols-2 gap-4'
+        >
+          <input
+            type='text'
+            name='name'
+            id='form-name'
+            placeholder='Nombre'
+            class='w-full col-span-2 md:col-span-1 p-2 rounded-md outline-none focus:border-amatista dark:bg-gray-200'
+          />
+          <input
+            type='email'
+            name='email'
+            id='form-email'
+            placeholder='Email'
+            class='w-full col-span-2 md:col-span-1 p-2 rounded-md outline-none focus:border-amatista dark:bg-gray-200'
+          />
+          <input
+            type='tel'
+            name='phone'
+            id='form-phone'
+            placeholder='Celular'
+            class='w-full col-span-2 p-2 rounded-md outline-none focus:border-amatista dark:bg-gray-200'
+          />
+          <textarea
+            name='message'
+            id='form-message'
+            cols='30'
+            rows='10'
+            placeholder='Mensaje'
+            set:text=`Hola Amatista Comunidad.\n\nVoy a vender algunas prendas, quiero más espacio en mi armario y sé que ustedes les van a encontrar una nueva vida útil.\n\n¡Quiero unirme a la moda sostenible y ganar algo extra!\n\nGracias.`
+            class='w-full col-span-2 p-2 rounded-md outline-none focus:border-amatista dark:bg-gray-200 font-urbanist'
+          ></textarea>
+          <input
+            type='submit'
+            value='Enviar'
+            class='col-span-2 py-2 text-xl font-semibold duration-200 bg-black hover:opacity-80 text-raw_white dark:text-black dark:bg-raw_white'
+          />
+        </form>
+      </div>
+    </TextContainer>
+  </SectionContainer>
+
+  <Whatsapp
+    text='Hola, me comunico con amatista porque tengo interés de vender mis prendas en su tienda.'
+  />
+</Layout>

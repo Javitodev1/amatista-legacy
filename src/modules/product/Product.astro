@@ -1,0 +1,57 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Whatsapp from "@/components/Whatsapp.astro"
+import BuyButton from "@/components/BuyButton.astro"
+import TextContainer from "@/components/TextContainer.astro"
+import SoldOutBadge from "@/components/SoldOutBadge.astro"
+import {formatCurreny} from "@/utils/currency"
+
+const product = {
+    "id": "clt60li4u0bed07k8030839vh",
+    "price": 290,
+    "size": "M",
+    "stock": 1,
+    "tag": [
+        "Abrigos",
+        "Gangas",
+        "Tejido_Artesanal"
+    ],
+    "title": "SACO NIEVE",
+    "backImg": {
+        "url": "https://media.graphassets.com/L0msDworRWKHg8ImAUxn"
+    },
+    "frontImg": {
+        "url": "https://media.graphassets.com/vdi4jwcQ8GpwKoTmubZQ"
+    },
+    "description": "SACO DE HILO, COLOR BLANCO CON PEQUEÑOS BRILLOS "
+}
+
+---
+
+<Layout>
+  <SectionContainer>
+    {product && (
+      <div class="grid md:grid-cols-3 grid-cols-1">
+        <div class="md:order-1 order-2">
+          <img src={product.frontImg.url} alt={product.title} />
+        </div>
+        <div class="md:order-2 order-3">
+          <img src={product.backImg.url} alt={product.title} />
+        </div>
+        <div class="md:p-12 px-6 mb-12 md:mb-0 md:order-3 order-1">
+          <TextContainer class="mb-12">
+            <h2>{product.title}</h2>
+            <h3>{product.tag}</h3>
+            <p>{product.description}</p>
+            <p>Talla: {product.size}</p>
+            <p>Precio: {formatCurreny(product.price)}</p>
+            <SoldOutBadge isSoldOut={product.stock < 1} />
+          </TextContainer>
+          <BuyButton href="/contacto">Contactanos</BuyButton>
+        </div>
+      </div>
+    )}
+  </SectionContainer>
+  <Whatsapp />
+</Layout>

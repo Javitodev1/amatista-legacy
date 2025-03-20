@@ -1,0 +1,153 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import BuyButton from '@/components/BuyButton.astro'
+import ContactButton from '@/components/ContactButton.astro'
+import StepArticle from '@/components/molecules/StepArticle.astro'
+
+import right_img from '@public/optimized/como_comprar_1.webp'
+import left_img from '@public/optimized/como_comprar_2.webp'
+
+const steps = [
+  {
+    step: '01',
+    title: 'Elegí tu prenda',
+    content:
+      'Explorá nuestra amplia gama de productos disponibles en nuestro sitio web. Una vez que hayas identificado la prenda que te interesa, por favor háznoslo saber.',
+  },
+  {
+    step: '02',
+    title: 'Contactanos',
+    content:
+      'Escríbenos por WhatsApp o Instagram mencionando la prenda que te gustó, adjuntando un enlace o captura de la misma Indícanos tu ubicación y el método de pago que prefieres.',
+  },
+  {
+    step: '03',
+    title: 'Confirmamos disponibilidad',
+    content:
+      'Te confirmaremos la disponibilidad de la prenda, responderemos cualquier pregunta que tengas Una vez que estés listo para realizar la compra, procede con el pago según el método acordado.',
+  },
+  {
+    step: '04',
+    title: 'Realizá el pago',
+    content:
+      'Después de realizar el pago, envíanos el comprobante de la transacción.',
+  },
+  {
+    step: '05',
+    title: 'Detalles del envio',
+    content:
+      'Proporciona los detalles de envío, incluyendo tu nombre completo, dirección de entrega (localidad, sucursal o dirección si solicitaste un envío a domicilio ) y número de teléfono.',
+  },
+  {
+    step: '06',
+    title: 'Enviamos tu paquete',
+    content:
+      'Una vez recibido el comprobante de pago y los datos de envío, procesaremos tu pedido. Te enviaremos el paquete en las próximas 48 horas y te proporcionaremos el número de seguimiento mediante una foto del comprobante.',
+  },
+]
+---
+
+<Layout>
+  <SectionContainer>
+    <Typographi
+      as='h2'
+      variant='TITLE'
+      color='ACCENT_AMATISTA'
+      class='text-center md:text-left mb-12'
+      >PASOS SENCILLOS PARA COMPRAR EN AMATISTA
+    </Typographi>
+
+    <div
+      class='grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-0 md:gap-y-12 md:gap-x-4'
+    >
+      <img
+        class='w-auto h-full aspect-portrait object-cover object-center'
+        src={left_img.src}
+        alt='romero bolsa luciana'
+        width='500'
+        height='750'
+      />
+
+      <div
+        class='flex flex-col h-full justify-between gap-8 md:gap-0 place-self-end'
+      >
+        <StepArticle {...steps[0]!} />
+        <StepArticle {...steps[1]!} />
+        <StepArticle {...steps[2]!} />
+      </div>
+
+      <div class='flex flex-col h-full justify-between gap-8 md:gap-0'>
+        <StepArticle {...steps[3]!}>
+          <a href='#metodos-de-pago'
+            ><Typographi
+              as='p'
+              variant='BODY_TITLE'
+              color='ACCENT_AMATISTA'
+              class='mt-4'
+              >Revisa aqui nuestros métodos de pago
+            </Typographi>
+          </a>
+        </StepArticle>
+        <StepArticle {...steps[4]!} />
+        <StepArticle {...steps[5]!} />
+      </div>
+
+      <img
+        src={right_img.src}
+        alt='entrega de tu producto'
+        width='500'
+        height='750'
+        class='w-auto h-full aspect-portrait object-cover object-center place-self-end'
+      />
+    </div>
+
+    <BuyButton variant='RESPONSIVE' position='CENTER' class='mt-20'
+      >Visita nuestra tienda
+    </BuyButton>
+  </SectionContainer>
+
+  <SectionContainer id='metodos-de-pago'>
+    <TextContainer class='flex flex-col gap-6'>
+      <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'>Métodos de pago</Typographi>
+
+      <Typographi as='h3' variant='SUBTITLE' color="RESPONSIVE">Mercado Pago</Typographi>
+      <ul class="list-disc md:pl-12 pl-6">
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Avísanos para crear tu código QR o enlace de pago, donde podrás abonar
+          hasta en 12 cuotas.</Typographi>
+      </ul>
+
+      <Typographi as='h3' variant='SUBTITLE' color="RESPONSIVE">Transferencia o depósito Prex</Typographi>
+      <ul class="list-disc md:pl-12 pl-6">
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Nombre: Luciana Noble</Typographi>
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Cuenta para transferir: 1044286</Typographi>
+      </ul>
+
+      <Typographi as='h3' variant='SUBTITLE' color="RESPONSIVE">Depósito en Abitab</Typographi>
+      <ul class="list-disc md:pl-12 pl-6">
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Cuenta: 5.271.357-8 (gratuito)</Typographi>
+      </ul>
+
+      <Typographi as='h3' variant='SUBTITLE' color="RESPONSIVE">Transferencia Midinero Nacional</Typographi>
+      <ul class="list-disc md:pl-12 pl-6">
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Cuenta: 2586119</Typographi>
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Nombre: Luciana Noble</Typographi>
+      </ul>
+
+      <Typographi as='h3' variant='SUBTITLE' color="RESPONSIVE">Depósito en Red Pagos Midinero Nacional</Typographi>
+      <ul class="list-disc md:pl-12 pl-6">
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Cuenta: 5.271.357-8</Typographi>
+        <Typographi as='li' variant='BODY' color="RESPONSIVE">Nombre: Luciana Noble - Costo del depósito: $50</Typographi>
+      </ul>
+
+      <Typographi as='p' variant='BODY' color="ACCENT_AMATISTA"><strong>Efectivo únicamente en Maldonado / Punta del Este</strong></Typographi>
+      <Typographi as='p' variant='BODY' color="RESPONSIVE">Por favor, selecciona el método de pago que prefieras y avísanos para
+        proporcionarte los detalles necesarios para completar la transacción. Si
+        tienes alguna pregunta adicional, no dudes en contactarnos.</Typographi>
+    </TextContainer>
+
+      <ContactButton variant="DARK_MODE" position="CENTER" class='my-12'>contactame</ContactButton>
+  </SectionContainer>
+</Layout>

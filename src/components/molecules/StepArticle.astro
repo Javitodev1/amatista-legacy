@@ -1,0 +1,22 @@
+---
+import TextContainer from '../TextContainer.astro'
+import Typographi from '../foundations/Typographi.astro'
+
+interface Props {
+  step: string
+  title: string
+  content: string
+  class?: string
+}
+
+const { step, title, content, class:className } = Astro.props
+---
+
+<TextContainer class='flex gap-4' class:list={className}>
+  <Typographi as='span' variant='TITLE' color="ACCENT_GOLDEN" class="h-full">{step}</Typographi>
+  <div class="h-full">
+    <Typographi as='h2' variant='TITLE' color="ACCENT_AMATISTA" class="mb-4 md:mb-6">{title}</Typographi>
+    <Typographi as='p' variant='BODY' color="RESPONSIVE">{content}</Typographi>
+    <slot />
+  </div>
+</TextContainer>

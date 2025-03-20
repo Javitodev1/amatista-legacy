@@ -1,0 +1,1 @@
+export const NOT_FOUND_IMG_SRC = 'https://placehold.co/500x500'

@@ -1,0 +1,20 @@
+---
+interface Props {
+  isSoldOut?: boolean
+  class?: string
+}
+
+const { isSoldOut = true, class: className } = Astro.props
+const content = isSoldOut ? 'agotado' : 'disponible'
+---
+
+<span
+  class="capitalize px-3 py-1 text-sm rounded-full text-raw_white"
+  class:list={[
+    className,
+    { 'bg-black': isSoldOut },
+    { 'bg-amatista': !isSoldOut },
+  ]}
+>
+  {content}
+</span>

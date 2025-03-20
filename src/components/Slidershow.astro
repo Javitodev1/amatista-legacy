@@ -1,0 +1,38 @@
+---
+interface Image {
+  src: string
+  alt: string
+  id: string
+}
+interface Props {
+  images?: Image[]
+}
+
+const { images = [] } = Astro.props
+---
+
+<div class='relative overflow-y-hidden'>
+  <div
+    style='scrollbar-width: none;'
+    class='flex aspect-video max-w-[715px] snap-x snap-mandatory overflow-x-auto scroll-smooth'
+  >
+    {images.map(({ src, alt, id }) => (
+      <img
+        class="aspect-video shrink-0 grow basis-full snap-start object-cover"
+        id={id}
+        src={src}
+        alt={alt}
+        decoding="async"
+        loading="lazy"
+      />
+    ))}
+  </div>
+  <div class='mt-4 flex justify-center gap-8'>
+    {images.map(({ id }) => (
+      <a
+        href={`#${id}`}
+        class="aspect-square h-12 rounded-full bg-fuchsia-600 duration-200 active:bg-fuchsia-300"
+      />
+    ))}
+  </div>
+</div>

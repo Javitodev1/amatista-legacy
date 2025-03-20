@@ -1,0 +1,29 @@
+---
+import Typographi from './foundations/Typographi.astro'
+import TextContainer from './TextContainer.astro'
+interface Props {
+  title: string
+  content: string
+  image: string
+  class?: string
+}
+
+const { title, content, image, class: className } = Astro.props
+---
+
+<div class:list={[className]} class='h-full p-8'>
+  <img src={image} alt={title} class='object-cover w-full h-auto mb-4 aspect-portrait' />
+
+  <TextContainer responsive='RESPONSIVE'>
+    <Typographi
+      as='h3'
+      variant='BODY_TITLE'
+      color='ACCENT_AMATISTA'
+      class='mb-4'
+      >{title}
+    </Typographi>
+    <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+      >{content}
+    </Typographi>
+  </TextContainer>
+</div>

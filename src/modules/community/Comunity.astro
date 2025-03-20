@@ -1,0 +1,146 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import ContactButton from '@/components/ContactButton.astro'
+
+import heroImg from '@public/optimized/comunidad_hero.webp'
+import cupon_img from '@public/optimized/cupon.webp'
+import brand_left from '@public/optimized/brand_photography.webp'
+import brand_center from '@public/optimized/brand_tejidos.webp'
+import comunidad_sec_1 from '@public/optimized/comunidad_sec_1.webp'
+
+const alliances = [
+  {
+    logo: brand_left.src,
+    name: 'Valentina Pereira',
+    instagramTag: '@valeepereyraphotos',
+    href: 'https://www.instagram.com/valeepereyraphotos/',
+  },
+  {
+    logo: brand_center.src,
+    name: 'Kardia Tejidos',
+    instagramTag: '098778638 - Rosario',
+    href: 'https://api.whatsapp.com/send?phone=59098778638',
+  },
+]
+---
+
+<Layout>
+  <!-- Hero -->
+  <section>
+    <div class='relative z-0'>
+      <div
+        style={`background-image: url(${heroImg.src});`}
+        class='w-full h-screen bg-center bg-no-repeat bg-cover'
+      >
+      </div>
+      <span class='absolute top-0 left-0 w-full h-screen bg-black/50'></span>
+      <div class='absolute top-0 left-0 w-full h-screen'>
+        <TextContainer
+          responsive='BOTH_CENTER'
+          class='flex flex-col gap-8 h-full justify-center px-6'
+        >
+          <Typographi as='h2' variant='BANNER' color='WHITE'
+            >REVOLUCIONANDO LA CULTURA <br class='hidden md:block' /> COLABORATIVA
+            MIENTRAS <br />
+            <strong class='text-amatista'>CO-CREAMOS</strong>
+          </Typographi>
+          <Typographi as='p' variant='SUBTITLE' color='WHITE'
+            >UNA VISIÓN COMPARTIDA DEL FUTURO PARA LOGRAR NUESTRA <br
+              class='hidden md:block'
+            />
+            <strong class='text-amatista'>SOSTENIBILIDAD</strong>
+          </Typographi>
+          <ContactButton variant='WHITE' position='CENTER'
+            >contactame
+          </ContactButton>
+        </TextContainer>
+      </div>
+    </div>
+  </section>
+  <!-- End Banner -->
+
+  <SectionContainer>
+    <div
+      class='grid grid-cols-1 gap-4 md:gap-12 md:grid-cols-2 place-items-center'
+    >
+      <div
+        style={`background-image: url(${comunidad_sec_1.src});`}
+        class='w-full bg-center bg-cover aspect-square'
+      >
+      </div>
+
+      <TextContainer responsive='RESPONSIVE' class='flex flex-col gap-6'>
+        <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+          >Comunidad amatista
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Nos unimos para formar una comunidad donde creamos juntas un mundo
+          tanto tangible como energético.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Aquí, la unión de mujeres trasciende las limitaciones, ofreciendo un
+          espacio accesible para todos y todas. Nuestro enfoque se centra en un
+          estilo de vida sostenible, minimalista, auténtico y unica, diseñada
+          para personas de todos los estilos.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >¡Bienvenidos a un lugar donde la belleza se encuentra en la
+          diversidad y la autenticidad!
+        </Typographi>
+      </TextContainer>
+    </div>
+  </SectionContainer>
+
+  <!-- Banner Cupones -->
+  <SectionContainer>
+    <div class='max-w-[940px] mx-auto'>
+      <img
+        src={cupon_img.src}
+        alt='cupon amatista'
+        width='940'
+        height='529'
+        class='w-full h-auto aspect-video object-cover object-center'
+      />
+    </div>
+  </SectionContainer>
+  <!-- End Banner Cupones -->
+
+  <SectionContainer>
+    <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA' class="text-center md:mb-12 mb-6">
+      Co-crea con Amatista
+    </Typographi>
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10'>
+      {alliances.map(({ logo, name, instagramTag, href }) => (
+        <div class='flex flex-col items-center group hover:cursor-pointer gap-2'>
+          <img
+            src={logo}
+            alt={name}
+            class='w-[300px] aspect-square object-cover object-center'
+          />
+          <Typographi
+            as='p'
+            variant='SUBTITLE'
+            color='ACCENT_AMATISTA'
+          >
+            {name}
+          </Typographi>
+          <a
+            href={href}
+            class='group-hover:underline group-hover:text-amatista text-black dark:text-white'
+            target='_blank'
+          >
+            <Typographi
+              as='p'
+              variant='BODY_TITLE'
+            >
+              {instagramTag}
+            </Typographi>
+          </a>
+        </div>
+      ))}
+    </div>
+  </SectionContainer>
+</Layout>

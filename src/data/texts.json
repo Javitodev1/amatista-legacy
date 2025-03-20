@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "page": "home",
+    "section": "hero",
+    "key": "content",
+    "value": "Vestimos cuerpos sagrados con <strong>prendas únicas</strong>"
+  },
+  {
+    "id": 2,
+    "page": "home",
+    "section": "hero",
+    "key": "cta",
+    "value": "Comprá ahora"
+  },
+  {
+    "id": 3,
+    "page": "home",
+    "section": "recien_llegados",
+    "key": "title",
+    "value": "recién llegados"
+  },
+  {
+    "id": 4,
+    "page": "home",
+    "section": "recien_llegados",
+    "key": "cta",
+    "value": "Ver Todo"
+  },
+  {
+    "id": 5,
+    "page": "home",
+    "section": "como_comprar",
+    "key": "title",
+    "value": "La Forma Más Simple de Comprar"
+  },
+  {
+    "id": 6,
+    "page": "home",
+    "section": "como_comprar",
+    "key": "subtitle",
+    "value": "Hemos simplificado el proceso de compra"
+  },
+  {
+    "id": 7,
+    "page": "home",
+    "section": "como_comprar",
+    "key": "description",
+    "value": "Solo necesitas comunicarte con nosotras a través de WhatsApp o un mensaje en Instagram para obtener tus prendas favoritas"
+  },
+  {
+    "id": 8,
+    "page": "home",
+    "section": "como_comprar",
+    "key": "slogan",
+    "value": "¡Sin complicaciones ni intermediarios! ¡Hacé tu pedido hoy mismo por cualquiera de nuestras redes!"
+  },
+  {
+    "id": 10,
+    "page": "home",
+    "section": "banner_comunidad",
+    "key": "title",
+    "value": "Construyendo Juntas"
+  },
+  {
+    "id": 11,
+    "page": "home",
+    "section": "banner_comunidad",
+    "key": "subtitle",
+    "value": "Comunidad"
+  },
+  {
+    "id": 12,
+    "page": "home",
+    "section": "banner_comunidad",
+    "key": "description",
+    "value": "Nos unimos para crear una comunidad donde creamos juntas un mundo, tanto en su forma tangible como energética."
+  },
+  {
+    "id": 13,
+    "page": "home",
+    "section": "banner_comunidad",
+    "key": "cta",
+    "value": "Conocé más"
+  },
+  {
+    "id": 14,
+    "page": "home",
+    "section": "banner_coleccion",
+    "key": "title_1",
+    "value": "vestidos"
+  },
+  {
+    "id": 15,
+    "page": "home",
+    "section": "banner_coleccion",
+    "key": "title_2",
+    "value": "blusas y camisas"
+  },
+  {
+    "id": 16,
+    "page": "home",
+    "section": "banner_coleccion",
+    "key": "title_3",
+    "value": "tejidos artesanales"
+  },
+  {
+    "id": 17,
+    "page": "home",
+    "section": "banner_aged",
+    "key": "title",
+    "value": "Titulo"
+  },
+  {
+    "id": 18,
+    "page": "home",
+    "section": "banner_aged",
+    "key": "ctaTopLeft",
+    "value": "Comprá Todo 1"
+  },
+  {
+    "id": 19,
+    "page": "home",
+    "section": "banner_aged",
+    "key": "ctaBottomLeft",
+    "value": "Comprá Todo 2"
+  },
+  {
+    "id": 20,
+    "page": "home",
+    "section": "banner_aged",
+    "key": "ctaRight",
+    "value": "Comprá Todo 3"
+  },
+  {
+    "id": 21,
+    "page": "home",
+    "section": "kit_sanacion",
+    "key": "title",
+    "value": "Kit de sanación"
+  },
+  {
+    "id": 22,
+    "page": "home",
+    "section": "kit_sanacion",
+    "key": "subtitle",
+    "value": "Podrás disfrutar de prendas que no solo lucen bien, sino que también te hacen sentir bien."
+  },
+  {
+    "id": 23,
+    "page": "home",
+    "section": "kit_sanacion",
+    "key": "content",
+    "value": "<p>En Amatista estamos encantados de presentarte nuestro exclusivo Kit de Sanación Energética.</p><p>Cada prenda pre amada tiene su propia historia y energía acumulada a lo largo del tiempo. Nuestro pequeño kit está diseñado para limpiar y revitalizar estas prendas, dejándolas listas para que te envuelvan con una nueva sensación de frescura y vitalidad.</p>"
+  },
+  {
+    "id": 24,
+    "page": "home",
+    "section": "banner_suscribite",
+    "key": "title",
+    "value": "novedades"
+  },
+  {
+    "id": 25,
+    "page": "home",
+    "section": "banner_suscribite",
+    "key": "subtitle",
+    "value": "suscríbete"
+  },
+  {
+    "id": 26,
+    "page": "home",
+    "section": "banner_suscribite",
+    "key": "content",
+    "value": "¡Unité a la Comunidad <strong>AMATISTA</strong>! Entérate de las últimas novedades. Recibirás un <strong>10% DE DESCUENTO</strong> para tu primera compra."
+  },
+  {
+    "id": 27,
+    "page": "home",
+    "section": "banner_contacto",
+    "key": "title_1",
+    "value": "ENVIOS SIN PLASTICOS"
+  },
+  {
+    "id": 28,
+    "page": "home",
+    "section": "banner_contacto",
+    "key": "description_1",
+    "value": "Estamos comprometemos con el planeta. Por eso, realizamos nuestros envíos sin plásticos. ¡Únete a nosotros en la lucha por un futuro más sostenible!"
+  },
+  {
+    "id": 29,
+    "page": "home",
+    "section": "banner_contacto",
+    "key": "title_2",
+    "value": "NUESTRAS ENTREGAS"
+  },
+  {
+    "id": 30,
+    "page": "home",
+    "section": "banner_contacto",
+    "key": "description_2",
+    "value": "Hacemos todo lo posible para enviar nuestros paquetes el mismo día o al día siguiente. Además, ¡si realizas tu pedido en Maldonado, el envío es gratis!"
+  },
+  {
+    "id": 31,
+    "page": "home",
+    "section": "banner_contacto",
+    "key": "title_3",
+    "value": "!CO-CREAMOS COMUNIDAD!"
+  },
+  {
+    "id": 32,
+    "page": "home",
+    "section": "banner_contacto",
+    "key": "description_3",
+    "value": "Colaboramos con otras emprendedoras para construir un espacio donde todas podamos crecer juntas. Desde compartir ideas hasta organizar eventos."
+  },
+  {
+    "id": 33,
+    "page": "home",
+    "section": "banner_contacto",
+    "key": "cta",
+    "value": "Contactanos"
+  }
+]

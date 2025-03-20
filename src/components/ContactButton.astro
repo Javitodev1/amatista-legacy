@@ -1,0 +1,51 @@
+---
+import Typographi from './foundations/Typographi.astro'
+
+enum VariantClasses {
+  WHITE = 'text-white border-white hover:text-white/75 hover:border-white/75',
+  BLACK = 'text-black border-black hover:text-black/75 hover:border-black/75',
+  DARK_MODE = 'text-black border-black hover:text-black/75 hover:border-black/75 dark:text-white dark:border-white dark:hover:text-white/75 dark:hover:border-white/75',
+}
+
+enum PositionClasses {
+  LEFT = 'flex justify-start',
+  CENTER = 'flex justify-center',
+  RIGHT = 'flex justify-end',
+  RESPONSIVE = 'flex md:justify-start justify-center',
+  NONE = 'block',
+}
+
+interface Props {
+  variant: keyof typeof VariantClasses
+  href?: string
+  target?: '_blank' | '_self'
+  position?: keyof typeof PositionClasses
+  class?: string
+}
+
+const {
+  variant,
+  href = 'https://api.whatsapp.com/send?phone=59896667633',
+  target = '_blank',
+  position = PositionClasses.NONE,
+  class: className,
+} = Astro.props
+
+const containerCss = [
+  PositionClasses[position as keyof typeof PositionClasses],
+  className,
+]
+
+const classes = [VariantClasses[variant as keyof typeof VariantClasses]]
+---
+
+<div class:list={containerCss}>
+  <a
+    href={href}
+    target={target}
+    class:list={classes}
+    class='px-4 py-4 transition-transform duration-300 border-4 md:px-12 hover:backdrop-blur'
+  >
+    <Typographi as='p' variant='BODY_TITLE'><slot></slot></Typographi>
+  </a>
+</div>

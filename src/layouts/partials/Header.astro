@@ -1,0 +1,85 @@
+---
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import DarkModeSwitcher from '@/components/DarkModeSwitcher.astro'
+import Logo from '@/icons/Logo.astro'
+
+const links = [
+  { href: '/', title: 'Inicio' },
+  { href: '/tienda#/?filter=all', title: 'Tienda' },
+  { href: '/nosotras', title: 'Nosotras' },
+  { href: '/comunidad', title: 'Comunidad' },
+  { href: '/como-comprar', title: 'Cómo comprar' },
+  { href: '/contacto', title: 'Vende tu ropa' },
+]
+---
+
+<TextContainer responsive='BOTH_CENTER' class='bg-raw_white dark:bg-black'>
+  <Typographi as='h2' variant='BODY' color='RESPONSIVE' class='font-bold'
+    >Envíos a todo Uruguay
+  </Typographi>
+</TextContainer>
+
+<header class='py-2 bg-raw_white dark:bg-black'>
+  <nav class=' px-4 lg:px-6 py-2.5 '>
+    <div
+      class='flex flex-wrap items-center justify-between max-w-screen-xl mx-auto'
+    >
+      <Logo class='w-60' />
+      <div class='flex items-center lg:order-2'>
+        <DarkModeSwitcher />
+        <button
+          id='mobile-button'
+          title='menu'
+          type='button'
+          class='inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+        >
+          <svg
+            class='w-6 h-6'
+            fill='currentColor'
+            viewBox='0 0 20 20'
+            xmlns='http://www.w3.org/2000/svg'
+            ><path
+              fill-rule='evenodd'
+              d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
+              clip-rule='evenodd'></path>
+          </svg>
+        </button>
+      </div>
+      <div
+        class='items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1'
+        id='mobile-menu'
+      >
+        <ul
+          class='flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0'
+        >
+          {links.map(({ href, title }) => (
+            <Typographi
+              as='li'
+              variant='BODY'
+              color='RESPONSIVE'
+            >
+              <a
+                href={href}
+                class='block hover:text-amatista relative after:absolute after:h-[2px] after:w-0 after:bg-amatista after:bottom-0 after:left-0 after:hover:w-full after:duration-200 after:transition-[width]'
+              >
+                {title}
+              </a>
+            </Typographi>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileButtonHandleClick = () => {
+    const menu = document.querySelector('#mobile-menu')!
+    menu.classList.toggle('hidden')
+  }
+  document.addEventListener('astro:page-load', () => {
+    const button = document.querySelector('#mobile-button')!
+    button.addEventListener('click', mobileButtonHandleClick)
+  })
+</script>

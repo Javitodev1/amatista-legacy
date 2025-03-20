@@ -1,0 +1,32 @@
+---
+import TextContainer from './TextContainer.astro'
+import { formatCurreny } from '../utils/currency'
+import SoldOutBadge from './SoldOutBadge.astro'
+interface Props {
+  title: string
+  price: number
+  imageUrl: string
+  isSoldout: boolean
+}
+const { title, price, imageUrl, isSoldout } = Astro.props
+const priceFormatted = formatCurreny(price)
+const href = '/tienda/producto'
+---
+
+<a
+  href={href}
+  class="inline-block group"
+>
+  <div class="relative mb-4 overflow-hidden">
+    <img
+      src={imageUrl}
+      alt={title}
+      class="duration-1000 group-hover:scale-110"
+    />
+    {isSoldout && <SoldOutBadge class="absolute bottom-3 left-3" />}
+  </div>
+  <TextContainer>
+    <p class="capitalize">{title}</p>
+    <p>{priceFormatted}</p>
+  </TextContainer>
+</a>

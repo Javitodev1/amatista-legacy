@@ -1,0 +1,52 @@
+---
+import SectionContainer from '@/components/SectionContainer.astro'
+import VerticalHero from '@/components/VerticalHero.astro'
+import ContactButton from '@/components/ContactButton.astro'
+
+import leftImg from '@public/optimized/home_delivery_3.webp'
+import centerImg from '@public/optimized/home_delivery_2.webp'
+import rightImg from '@public/optimized/home_delivery_1.webp'
+
+const banners = [
+  {
+    title: 'ENVIOS SIN PLASTICOS',
+    content:
+      'Estamos comprometemos con el planeta. Por eso, realizamos nuestros envíos sin plásticos. ¡Únete a nosotros en la lucha por un futuro más sostenible!',
+    image: leftImg.src,
+    href: '/empaques',
+  },
+  {
+    title: 'NUESTRAS ENTREGAS',
+    content:
+      'Hacemos todo lo posible para enviar nuestros paquetes el mismo día o al día siguiente. Además, ¡si realizas tu pedido en Maldonado, el envío es gratis!',
+    image: centerImg.src,
+    href: '/envios',
+  },
+  {
+    title: '!CO-CREAMOS COMUNIDAD!',
+    content:
+      'Colaboramos con otras emprendedoras para construir un espacio donde todas podamos crecer juntas. Desde compartir ideas hasta organizar eventos.',
+    image: rightImg.src,
+    href: '/comunidad',
+  },
+]
+---
+
+<SectionContainer>
+  <div class='mb-12 overflow-x-auto md:overflow-x-visible'>
+    <div class='grid grid-cols-3 gap-x-2 min-w-[800px]'>
+      {banners.map(({ title, content, image, href }) => (
+        <a href={href}>
+          <VerticalHero
+            title={title}
+            content={content}
+            image={image}
+            class='bg-raw_white dark:bg-black'
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <ContactButton variant='DARK_MODE' position="CENTER">Contactanos</ContactButton>
+</SectionContainer>

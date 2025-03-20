@@ -1,0 +1,17 @@
+---
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import BuyButton from '@/components/BuyButton.astro'
+// import { LatestSection } from '@/react'
+
+---
+
+<SectionContainer variant="darker">
+  <TextContainer>
+    <h2>Recién Llegados</h2>
+  </TextContainer>
+  <!-- <LatestSection client:load/> -->
+  <div class="mt-12 flex justify-center">
+    <BuyButton href='/tienda'>Ver Todo</BuyButton>
+  </div>
+</SectionContainer>

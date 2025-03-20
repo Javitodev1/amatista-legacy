@@ -1,0 +1,61 @@
+---
+import Typographi from '@/components/foundations/Typographi.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+
+import leftImage from '@public/optimized/home_categories_1.webp'
+import centerImage from '@public/optimized/home_categories_2.webp'
+import rightImage from '@public/optimized/home_categories_3.webp'
+
+const banners = [
+  {
+    img: leftImage.src,
+    text: 'Vestidos y Polleras',
+    href: '/tienda/#/?filter=vestidos-y-polleras',
+  },
+  {
+    img: centerImage.src,
+    text: 'Blusas y Camisas',
+    href: '/tienda/#/?filter=blusas-y-camisas',
+  },
+  {
+    img: rightImage.src,
+    text: 'Gangas',
+    href: '/tienda/#/?filter=gangas',
+  },
+]
+---
+
+<SectionContainer>
+  <div class='overflow-x-scroll md:my-12 md:overflow-x-visible'>
+    <div
+      class='grid grid-cols-3 lg:gap-2 gap-10 min-w-[800px]'
+    >
+      {banners.map(({ img, text, href }) => {
+        return (
+          <a
+            href={href}
+            class='group'
+          >
+            <img
+              src={img}
+              alt={text}
+              class='object-cover w-full h-auto mb-2 aspect-portrait'
+            />
+            <TextContainer responsive='BOTH_CENTER'>
+              <Typographi
+                as='h3'
+                variant='SUBTITLE'
+                color='BLACK'
+                darkColor='WHITE'
+                class='group-hover:text-amatista'
+              >
+                {text}
+              </Typographi>
+            </TextContainer>
+          </a>
+        )
+      })}
+    </div>
+  </div>
+</SectionContainer>

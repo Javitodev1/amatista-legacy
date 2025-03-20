@@ -1,0 +1,23 @@
+---
+enum ResponsiveClasses {
+  RESPONSIVE = 'text-center md:text-left',
+  BOTH_CENTER = 'text-center',
+  NONE = '',
+}
+
+interface Props {
+  class?: string
+  responsive?: keyof typeof ResponsiveClasses
+}
+
+const { class: className, responsive = ResponsiveClasses.NONE } =
+  Astro.props
+
+const classes = [
+  ResponsiveClasses[responsive as keyof typeof ResponsiveClasses],
+]
+---
+
+<article class:list={[className, classes]}>
+  <slot></slot>
+</article>

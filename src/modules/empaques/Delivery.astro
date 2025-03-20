@@ -1,0 +1,154 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import Separator from '@/components/Separator.astro'
+import ContactButton from '@/components/ContactButton.astro'
+
+import sectionImage1 from '@public/optimized/envios_sec_1.webp'
+import sectionImage2 from '@public/optimized/envios_sec_4.webp'
+import sectionImage3 from '@public/optimized/envios_sec_5.webp'
+import sectionImage4 from '@public/optimized/envios_sec_3.webp'
+import sectionImage5 from '@public/optimized/envios_sec_2.webp'
+import sectionHero from '@public/optimized/envios_hero.webp'
+---
+
+<Layout>
+  <SectionContainer variant='darker'>
+    <div class='grid grid-cols-1 md:grid-cols-2 md:gap-x-12 gap-4'>
+      <div
+        style={`background-image: url(${sectionImage1.src});`}
+        class='w-full aspect-square bg-cover bg-center bg-no-repeat'
+      >
+      </div>
+
+      <TextContainer responsive='RESPONSIVE' class='flex flex-col gap-4'>
+        <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+          >ASÍ EMPAQUETAMOS NUESTROS PEDIDOS SIN PLÁSTICO
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'
+          >A la hora de eligir los materiales se nos presentaron muchos
+          desafíos.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'
+          >¿Con que podíamos cerrar las cajas? <br /> ¿Qué material utilizar como
+          relleno en los envíos más delicados?
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'
+          >Por suerte cada día hay más personas preocupadas por reducir la
+          cantidad de plástico del Planeta y encontrar soluciones a estos
+          problemas fue más sencillo de lo que en un principio pensamos.
+        </Typographi>
+
+        <ContactButton variant='DARK_MODE' position='RESPONSIVE' class='mt-8'
+          >Contactame
+        </ContactButton>
+      </TextContainer>
+    </div>
+  </SectionContainer>
+
+  <Separator />
+
+  <SectionContainer variant='light'>
+    <div class='grid grid-cols-1 md:grid-cols-5'>
+      <TextContainer
+        responsive='RESPONSIVE'
+        class='order-2 md:order-1 md:col-span-2 py-4 md:px-12 flex flex-col gap-4'
+      >
+        <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+          >Nuestros empaques
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'
+          >Todos los materiales que Amatista utiliza en sus envíos son
+          reciclables, biodegradables y sin plástico.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'
+          >Un packaging ecológico muy sencillo. Su sencillez lo hace especial.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'>
+          Una vez más demostramos que lo sostenible también puede ser bonito.
+        </Typographi>
+      </TextContainer>
+      <div
+        class='grid grid-cols-5 grid-rows-2 gap-4 order-1 md:order-2 md:col-span-3'
+      >
+        <div
+          style={`background-image: url(${sectionImage2.src});`}
+          class='w-full h-full bg-cover bg-center bg-no-repeat aspect-square col-span-2'
+        >
+        </div>
+        <div
+          style={`background-image: url(${sectionImage3.src});`}
+          class='w-full h-full bg-cover bg-center bg-no-repeat aspect-square row-span-2 col-span-3'
+        >
+        </div>
+        <div
+          style={`background-image: url(${sectionImage4.src});`}
+          class='w-full h-full bg-cover bg-center bg-no-repeat aspect-square col-span-2'
+        >
+        </div>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <SectionContainer variant='light'>
+    <div class='grid grid-cols-1 md:grid-cols-2 md:gap-12 gap-y-4'>
+      <div
+        style={`background-image: url(${sectionImage5.src});`}
+        class='w-full aspect-square bg-cover bg-center bg-no-repeat'
+      >
+      </div>
+
+      <TextContainer responsive='RESPONSIVE' class='flex flex-col gap-4'>
+        <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+          >TENEMOS EN CUENTA TODOS LOS DETALLES
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'
+          >Si has sido o vas a ser cliente de Amatista te animamos aque
+          reutilices, compostes o recicles nuestro packaging.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'
+          >Nuestras bolsas están diseñadas para minimizar nuestro impacto
+          ambiental. Utilizamos materiales reciclados y biodegradables en cada
+          paquete, eliminando plásticos innecesarios.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'>
+          Creemos en la importancia de cada pequeña acción para proteger
+          nuestras tierras.
+        </Typographi>
+
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'>
+          Al elegirnos, no solo obtienes prendas de calidad, sino que también
+          apoyas prácticas comerciales responsables y sostenibles.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='RESPONSIVE'>
+          Únete a nuestra comunidad de actos consciente y haz tu parte por un
+          futuro más verde.
+        </Typographi>
+      </TextContainer>
+    </div>
+  </SectionContainer>
+
+  <section class='h-[500px] md:h-screen w-full relative z-0'>
+    <div
+      class='absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat'
+      style={`background-image: url(${sectionHero.src});`}
+    >
+    </div>
+
+    <div class='grid md:grid-cols-2 relative h-full md:p-16 p-4'>
+      <TextContainer
+        responsive='BOTH_CENTER'
+        class='bg-raw_white/70 md:col-start-2 flex flex-col justify-around md:px-12 px-4'
+      >
+        <Typographi as='h2' variant='BANNER' color='ACCENT_AMATISTA'
+          >Valoramos cada prenda por su historia
+        </Typographi>
+        <ContactButton variant='BLACK' position='CENTER'
+          >contactame
+        </ContactButton>
+      </TextContainer>
+    </div>
+  </section>
+</Layout>

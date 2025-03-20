@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Whatsapp from "@/components/Whatsapp.astro"
+import Hero from "./Herov2.astro"
+import ComunidadBanner from "./ComunidadBanner.astro"
+import CollectionBanner from "./CollectionBanner.astro"
+import HealingKit from "./HealingKit.astro"
+import SubscribeBanner from "./SubscribeBanner.astro"
+import DeliveryBanner from "./DeliveryBanner.astro"
+import HowToBuyBanner from "./HowToBuyBanner.astro"
+import Separator from "@/components/Separator.astro"
+---
+
+<Layout>
+  <Hero />
+  <HowToBuyBanner />
+
+  <Separator directionX="reverse" />
+
+  <ComunidadBanner />
+  <CollectionBanner />
+
+  <Separator directionY="reverse" variant="H3" />
+
+  <HealingKit />
+
+  <Separator variant="H2" />
+
+  <SubscribeBanner />
+  <DeliveryBanner />
+
+  <Whatsapp />
+</Layout>

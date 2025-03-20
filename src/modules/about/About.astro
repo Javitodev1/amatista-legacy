@@ -1,0 +1,143 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import ContactButton from '@/components/ContactButton.astro'
+
+import hero_image from '@public/optimized/nosotras_hero.webp'
+import owner_img_1 from '@public/optimized/nosotras_sec_3.webp'
+import owner_img_2 from '@public/optimized/nosotras_sec_2.webp'
+import owner_img_3 from '@public/optimized/nosotras_sec_1.webp'
+---
+
+<Layout>
+  <section class='relative'>
+    <div
+      class='w-full h-screen bg-center bg-no-repeat bg-cover aspect-video'
+      style={`background-image: url(${hero_image.src});`}
+    >
+    </div>
+    <span class='absolute top-0 left-0 w-full h-full bg-black/60'></span>
+    <div
+      class='absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+    >
+      <TextContainer responsive='BOTH_CENTER'>
+        <Typographi as='h2' variant='BANNER' color='WHITE'
+          >Bienvenida a la comunidad <br />
+          <strong class='text-amatista'>Amatista</strong>
+        </Typographi>
+      </TextContainer>
+    </div>
+  </section>
+
+  <SectionContainer>
+    <div
+      class='grid grid-cols-1 md:grid-cols-2 md:grid-rows-5 max-w-[832px] mx-auto gap-8 place-items-center'
+    >
+      <TextContainer responsive='BOTH_CENTER' class=''>
+        <Typographi
+          as='h3'
+          variant='BODY_TITLE'
+          color='BLACK'
+          darkColor='WHITE'
+        >
+          En <strong class='text-amatista'>Amatista</strong> combinamos la autenticidad,
+          creatividad y calidad de la moda en un impacto más positivo.
+        </Typographi>
+      </TextContainer>
+
+      <div
+        style={`background-image: url(${owner_img_1.src});`}
+        class='w-full h-auto bg-center bg-cover aspect-square'
+      >
+      </div>
+
+      <div
+        style={`background-image: url(${owner_img_3.src});`}
+        class='w-full h-auto bg-center bg-cover aspect-square'
+      >
+      </div>
+
+      <TextContainer responsive='BOTH_CENTER' class='flex flex-col gap-4'>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Soy <strong class='text-amatista'>Luciana Noble</strong>, una
+          emprendedora uruguaya nacida en 2001.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Soy el corazón y la mente detrás de esta idea gestada hace más de 5
+          años.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Desde pequeña siento una gran admiración por las prendas y el sentido
+          de expresar la creatividad a través de la indumentaria.
+        </Typographi>
+      </TextContainer>
+
+      <TextContainer responsive='BOTH_CENTER'>
+        <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA' class='mb-8'
+          >Amatista
+        </Typographi>
+        <Typographi
+          as='p'
+          variant='BODY_TITLE'
+          color='BLACK'
+          darkColor='WHITE'
+          class='p-12 bg-raw_white dark:bg-black'
+          >Evolucionando hacia una idea de comunidad basada en la economía
+          circular, la co-creación con otras mujeres y una idea de vestirnos más
+          sustentablemente.
+        </Typographi>
+      </TextContainer>
+
+      <div class='row-span-3 place-self-start'>
+        <div
+          style={`background-image: url(${owner_img_2.src});`}
+          class='w-full h-auto mb-8 bg-center bg-cover aspect-portrait'
+        >
+        </div>
+
+        <TextContainer responsive='BOTH_CENTER'>
+          <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+            >En mis inicios me movió la conexión humana al adquirir prendas de
+            aquellas personas que luchan para subsistir. Vendiendo prendas
+            maravillosas en ferias, remates, iglesias o asociaciones sin fines
+            de lucro, que muchas veces brindan ayuda a niñas y niños en
+            situaciones complejas, brindándoles así una valiosa fuente de
+            ingresos también a ellos.
+          </Typographi>
+        </TextContainer>
+      </div>
+
+      <TextContainer
+        responsive='BOTH_CENTER'
+        class='flex flex-col row-span-2 gap-6 place-self-start'
+      >
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Cada prenda que pasa por nuestras manos se convierte en un diamante
+          único, celebrando la singularidad y el renacimiento de prendas que
+          quedaron en el olvido para algunos.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Amatista no solo viste si no que transforma y alquimiza prendas
+          convirtiendo lo ya utilizado en una nueva propuesta de valor y calidad
+          para las personas que buscan dejar menos huellas de consumo en su
+          camino.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >En Amatista cada prenda es pulida con amor y está lista para iniciar
+          un nuevo capítulo junto a su nuevo portador o portadora.
+        </Typographi>
+        <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+          >Te invitamos a que te unas a nuestra comunidad, que funciona como una
+          cadena de ayuda y donde puedes vestirte de forma auténtica, original y
+          accesible.
+        </Typographi>
+      </TextContainer>
+    </div>
+
+    <ContactButton variant='DARK_MODE' position='CENTER' class='mt-12 md:-mt-52'
+      >contáctame
+    </ContactButton>
+  </SectionContainer>
+</Layout>

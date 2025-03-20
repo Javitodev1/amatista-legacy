@@ -1,0 +1,67 @@
+---
+import Typographi from '@/components/foundations/Typographi.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import BuyButton from '@/components/BuyButton.astro'
+import InstagramIcon from '@/icons/Instagram.astro'
+import WhatappsIcon from '@/icons/Whatapps.astro'
+import Facebook from '@/icons/Facebook.astro'
+import Tiktok from '@/icons/Tiktok.astro'
+
+const socials = [
+  {
+    href: 'https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0',
+    Icon: WhatappsIcon,
+  },
+  {
+    href: 'https://www.instagram.com/amatista.comunidad/',
+    Icon: InstagramIcon,
+  },
+  {
+    href: 'https://web.facebook.com/amatista.comunidad/?_rdc=1&_rdr',
+    Icon: Facebook,
+  },
+  {
+    href: 'https://www.tiktok.com/@amatista.comunidad',
+    Icon: Tiktok,
+  },
+]
+---
+
+<SectionContainer variant='darker'>
+  <TextContainer
+    responsive='BOTH_CENTER'
+    class='flex flex-col items-center gap-y-4'
+  >
+    <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+      >LA FORMA MÁS SIMPLE DE COMPRAR
+    </Typographi>
+    <Typographi as='h3' variant='SUBTITLE' color='BLACK' darkColor='WHITE'
+      >HEMOS SIMPLIFICADO EL PROCESO DE COMPRA
+    </Typographi>
+    <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+      >Solo necesitas comunicarte con nosotras a través de WhatsApp o <br class="hidden md:block"/> un mensaje
+      en Instagram para obtener tus prendas favoritas
+    </Typographi>
+    <div
+      class='grid grid-cols-2 md:grid-cols-4 place-items-center my-4 gap-8'
+    >
+      {socials.map(({ href, Icon }) => {
+        return (
+          <a
+            href={href}
+            target='_blank'
+          >
+            <Icon class='w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista' />
+          </a>
+        )
+      })}
+    </div>
+    <Typographi as='h3' variant='SUBTITLE' color='BLACK' darkColor='WHITE'
+      >¡Sin complicaciones ni intermediarios! ¡Hacé tu <br class="hidden md:block"/> pedido hoy mismo por
+      cualquiera de nuestras redes!
+    </Typographi>
+
+    <BuyButton href='/como-comprar' variant='RESPONSIVE' class='my-12' position="CENTER">Como comprar</BuyButton>
+  </TextContainer>
+</SectionContainer>

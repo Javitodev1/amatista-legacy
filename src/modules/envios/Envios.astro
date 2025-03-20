@@ -1,0 +1,140 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import ContactButton from '@/components/ContactButton.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+import hero_img from '@public/optimized/entregas_hero.webp'
+import entregas_img from '@public/optimized/entregas_sec_1.webp'
+import correo_uruguayo_logo from '@public/optimized/correo-uruguayo.webp'
+import dac_logo from '@public/optimized/dac-logo.webp'
+import lighthouse_logo from '@public/optimized/Lighthouse.webp'
+
+const pickups = [
+  {
+    title: 'CORREO URUGUAYO',
+    content:
+      'entre $180 y $250 (sujeto al peso del paquete o costos adicionales agregados por las agencias de envío)',
+    imageSrc: correo_uruguayo_logo.src,
+    subtitle: 'COSTOS APROXIMADOS',
+  },
+  {
+    title: 'DAC',
+    content:
+      'entre $180 y $250 (sujeto al peso del paquete o costos adicionales agregados por las agencias de envío)',
+    imageSrc: dac_logo.src,
+    subtitle: 'COSTOS APROXIMADOS:',
+  },
+  {
+    title: 'Lighthouse',
+    content:
+      'Puedes ir a lighthouse en Maldonado, Zelmar Michelini esquina, 20000 Maldonado, Departamento de Maldonado y recibir el paquete.',
+    imageSrc: lighthouse_logo.src,
+    subtitle: '',
+  },
+]
+---
+
+<Layout>
+  <section class='relative'>
+    <div
+      style={`background-image: url(${hero_img.src});`}
+      class='h-[700px] md:h-auto w-full bg-center bg-no-repeat bg-cover md:aspect-video'
+    >
+    </div>
+    <span class='absolute top-0 left-0 w-full h-full bg-black/50'></span>
+    <TextContainer
+      class='absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 grid gap-y-16'
+      responsive='BOTH_CENTER'
+    >
+      <Typographi as='h2' variant='BANNER' color='WHITE'
+        >Envios y Entregas sin costo en <strong class='text-amatista'
+          >Maldonado
+        </strong> y <strong class='text-amatista'>Punta del Este</strong>
+      </Typographi>
+      <ContactButton variant='WHITE' position='CENTER'
+        >contactame
+      </ContactButton>
+    </TextContainer>
+  </section>
+
+  <SectionContainer>
+    <Typographi
+      as='h2'
+      variant='RESPONSIVE_TITLE'
+      color='ACCENT_AMATISTA'
+      class='lg:max-w-[600px] md:mb-12 mb-6'
+      >No tienes que preocuparte por costos adicionales al recibir tus
+      productos!
+    </Typographi>
+
+    <div class='grid grid-cols-1 gap-8 md:grid-cols-2'>
+      <div
+        style={`background-image: url(${entregas_img.src});`}
+        class='bg-cover bg-center bg-no-repeat w-full h-auto aspect-video'
+      >
+      </div>
+
+      <TextContainer responsive='RESPONSIVE'>
+        <Typographi
+          as='h3'
+          variant='BODY_TITLE'
+          color='ACCENT_AMATISTA'
+          class='mb-4'
+          >En Amatista Comunidad te brindamos la mejor experiencia
+        </Typographi>
+
+        <Typographi as='p' variant='BODY' color='RESPONSIVE' class=''>
+          Nos preocupamos por brindarte la mejor experiencia de compra posible.
+          Por eso, ofrecemos entregas gratuitas en Maldonado y Punta del Este.
+          Para hacer aún más conveniente tu experiencia de entrega, coordinamos
+          contigo el lugar y la hora que te resulten más cómodos.
+        </Typographi>
+      </TextContainer>
+    </div>
+  </SectionContainer>
+
+  <SectionContainer>
+    <Typographi
+      as='h2'
+      variant='TITLE'
+      color='ACCENT_AMATISTA'
+      class='text-center md:mb-12 mb-6'
+      >Podes optar por recoger tus compras en nuestros puntos de recogida
+      establecidos.
+    </Typographi>
+
+    <div class='grid grid-cols-1 gap-12 md:grid-cols-3'>
+      {pickups.map(({content, imageSrc, subtitle, title}) => (
+        <TextContainer responsive='RESPONSIVE'>
+          <div
+            style={`background-image: url(${imageSrc});`}
+            class='max-w-[100px] w-full h-auto aspect-square bg-center bg-cover bg-no-repeat mx-auto mb-4'
+          >
+          </div>
+          <Typographi as='h3' variant='BODY_TITLE' color='ACCENT_AMATISTA' >{title}</Typographi>
+          <Typographi as='p' variant='BODY_TITLE' color='RESPONSIVE' class="mb-4"
+            ><strong>{subtitle}</strong>
+          </Typographi>
+          <Typographi as='p' variant='BODY' color='RESPONSIVE' >{content}</Typographi>
+        </TextContainer>
+      ))}
+    </div>
+
+    <Typographi
+      as='h2'
+      variant='SUBTITLE'
+      color='RESPONSIVE'
+      class='text-center md:my-12 my-6'
+      >UNA VEZ EL PAQUETE SE ENCUENTRE EN EL <br class='hidden md:block' />
+      <strong class='text-amatista'>LOCAL</strong> TIENES <strong
+        class='text-amatista'
+        >10 DÍAS
+      </strong> HÁBILES PARA RETIRARLO
+    </Typographi>
+
+    <ContactButton variant='DARK_MODE' position='CENTER' class='mt-24 mb-12'
+      >contactame
+    </ContactButton>
+  </SectionContainer>
+</Layout>
